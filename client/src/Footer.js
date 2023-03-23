@@ -14,8 +14,8 @@ export default function Footer() {
         <span className="footer-title">Company</span>
         <Link to="/About">About</Link>
         <a className="link link-hover">Contact</a>
-        <a className="link link-hover">Jobs</a>
-        <a className="link link-hover">Press kit</a>
+        <a className="link link-hover"></a>
+        <a className="link link-hover"></a>
       </div>
       <div>
         <span className="footer-title">Legal</span>

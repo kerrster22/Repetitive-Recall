@@ -16,13 +16,13 @@ export default function AskTheQuestion({
               className="input input-bordered max-w-xs mb-5 "
               type="text"
               name="answer"
+              autoComplete="off"
               value={answer}
               onChange={handleAnswer}
             />
+            <button className="btn btn-outline ml-2 mr-2 mb-2">Submit</button>
           </form>
-          <button className="btn btn-outline ml-2 mr-2 mb-2">Submit</button>
 
-          {/* <p>interval:{nextQuestion?.interval}</p> */}
           <span
             onClick={() =>
               deleteCards(nextQuestion?._id, nextQuestion?.question)

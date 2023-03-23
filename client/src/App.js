@@ -71,15 +71,12 @@ function App() {
     // add our new card to the page
     const newCardsList = [...cards, res.data];
     setCards(newCardsList);
-    console.log(newCardsList);
-
     // reset the form
     setForm({
       question: "",
       answer: "",
       interval: 1,
     });
-    getCards();
   }
 
   async function deleteCards(id, name) {
