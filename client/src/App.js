@@ -41,6 +41,9 @@ function App() {
     console.log(currentDate);
     const nextReviewDate =
       new Date(currentDate).getTime() + interval * 60 * 1000;
+    console.log(nextReviewDate);
+    console.log(intervals);
+    console.log(interval);
     return nextReviewDate;
   }
 

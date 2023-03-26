@@ -1,9 +1,9 @@
-import { Link } from "react-router-dom";
 import Navigation from "./Navigation";
 import Footer from "./Footer";
 import axios from "axios";
 import { useState, useEffect } from "react";
 import AskTheQuestion from "./AskTheQuestion";
+import Clock from "./Clock";
 
 export default function Home({
   cards,
@@ -39,13 +39,16 @@ export default function Home({
 
     if (nextQuestion.answer === answer) {
       console.log("correct");
+      alert("Correct");
       // eslint-disable-next-line no-unused-expressions
       interval = question.interval + 1;
       nextAsk = calculateNextReview(question.nextAsk, interval);
+      console.log(nextAsk);
       // set body to have the next interval and time
     } else {
       console.log("incorrect");
-      interval = question.interval - 1;
+      alert("Incorrect");
+      interval = question.interval = 0;
       nextAsk = calculateNextReview(question.nextAsk, interval);
       // set body to have lowest interval and new time
     }
@@ -57,15 +60,14 @@ export default function Home({
       body
     );
 
-    // body of the put request will be an object with new interval and time
-
-    // rerun the get question to refresh the list of 1 question
     getCards();
   }
 
   return (
     <>
       <Navigation />
+
+      <Clock />
 
       {nextQuestion.nextAsk &&
         new Date(nextQuestion.nextAsk).getTime() < time && (
@@ -83,6 +85,7 @@ export default function Home({
         <div className="flex items-center flex-col ">
           <input
             name="question"
+            autoComplete="off"
             placeholder="Question"
             className="input input-bordered max-w-xs mb-5 "
             value={form.question}
@@ -92,6 +95,7 @@ export default function Home({
           <input
             name="answer"
             placeholder="Answer"
+            autoComplete="off"
             className="input input-bordered  max-w-xs mb-5 "
             value={form.answer}
             onChange={handleChange}
