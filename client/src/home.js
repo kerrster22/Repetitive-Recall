@@ -47,7 +47,8 @@ export default function Home({
       // set body to have the next interval and time
     } else {
       console.log("incorrect");
-      alert("Incorrect");
+      alert("Incorrect ! " + " The correct answer is " + nextQuestion.answer);
+
       interval = question.interval = 0;
       nextAsk = calculateNextReview(question.nextAsk, interval);
       // set body to have lowest interval and new time
