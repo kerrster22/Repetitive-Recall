@@ -17,7 +17,7 @@ mongoose.connect(process.env.DATABASE_URL);
 app.get("/Card", async (request, response) => {
   // try to do this code, but if it errors, instead of crashing the server, stop, and move to the catch
   try {
-    const cards = await Srs.find(request.query); // e.g. { location: "Liverpool" }
+    const cards = await Srs.find(request.query);
     response.status(200).json(cards);
   } catch (error) {
     console.log(error);

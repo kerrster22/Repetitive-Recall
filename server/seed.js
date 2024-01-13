@@ -6,7 +6,7 @@ const Srs = require("./models/Srs");
 mongoose.connect(process.env.DATABASE_URL);
 
 async function seed() {
-  // create a new instance of a cat object and add to the DB
+  // create a new instance of a card object and add to the DB
   await Srs.create({
     question: "1+1",
     answer: "2",
